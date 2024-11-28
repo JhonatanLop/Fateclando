@@ -16,7 +16,7 @@ arq.close()
 pub = rsa.PublicKey.load_pkcs1(txt, format='PEM')
 
 # Caminho para a minha chave privada
-server_priv_key = 'SERVER_PUBLIC_KEY'
+server_priv_key = 'SERVER_PRIV_KEY'
 arq1 = open(server_priv_key,'rb')
 txt1 = arq1.read()
 arq1.close()
@@ -30,8 +30,8 @@ def enviar():
     msg = input()
     while msg != '\x18':
         mensagem_codificada = msg.encode('utf-8')
-        msgEncriptada = rsa.encrypt(mensagem_codificada,pub)
-        tcp_con.send(msgEncriptada)
+        msg_encriptada = rsa.encrypt(mensagem_codificada,pub)
+        tcp_con.send(msg_encriptada)
         msg = input()
     tcp_con.close()
         
