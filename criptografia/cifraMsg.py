@@ -11,6 +11,12 @@ print('Cifrador de mensagens')
 # Caminho da pasta de chaves
 chaves_dir = os.path.join(os.getcwd(), 'chaves')
 
+# Verifica se a pasta 'chaves' existe
+if not os.path.exists(chaves_dir):
+    print(f'Erro: A pasta "chaves" não existe no caminho {chaves_dir}.')
+    exit()
+
+# Busca a chave pública (arquivos contendo "Pub" no nome)
 chave_publica = None
 for arquivo in glob.glob(os.path.join(chaves_dir, '*Pub*.txt')):
     chave_publica = arquivo
@@ -26,7 +32,7 @@ print(f'Chave pública encontrada: {chave_publica}')
 msg = input('Mensagem a ser cifrada: ').encode('utf-8')
 
 # Caminho da pasta 'msg'
-msg_dir = os.path.join(os.getcwd(), 'msg')
+msg_dir = os.path.join(os.getcwd(), 'mensagens')
 
 # Solicita o nome para o arquivo da mensagem
 nome_arquivo_msg = input('Nome do arquivo da mensagem cifrada (ex.: msg1.txt): ')
@@ -50,6 +56,3 @@ with open(arqnomemsg, 'wb') as arq:
     arq.write(msgc)
 
 print(f'Mensagem cifrada no arquivo: {arqnomemsg}')
-
-
-
