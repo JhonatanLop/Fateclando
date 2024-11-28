@@ -1,8 +1,15 @@
 #python3 version
 import rsa
+import os
+
 print ('Gerador de chaves assimetricas')
 size = 256
-end = input('Endereco do arquivo (c:\chaves\): ')
+end = os.path.join(os.getcwd(), 'chaves')  # Isso irá criar o caminho para o diretório chaves
+
+# Verificar se a pasta 'chaves' existe, caso contrário, cria
+if not os.path.exists(end):
+    os.makedirs(end)
+
 nome = input('Nome do arquivo: ')
 
 ##gero as chaves com o tamanho informado
