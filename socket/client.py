@@ -41,7 +41,7 @@ def enviar():
         msg = input()
     tcp_con.close()
 
-# Endereco IP do Servidor (maquina do Danko)
+# Endereco IP do Servidor
 SERVER = '127.0.0.1'
 
 # Porta que o Servidor esta escutando

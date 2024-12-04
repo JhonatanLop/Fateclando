@@ -5,7 +5,7 @@ from threading import Thread
 global tcp_con
 import rsa
 
-# A chave publica da pessoa para quem vou enviar a mensagem
+
 # A chave publica da pessoa para quem vou enviar a mensagem
 client_public_key_address = "/home/jhonatan/github/Fateclando/chaves/clientPub.txt"
 with open(client_public_key_address, 'rb') as file:
