@@ -40,7 +40,7 @@ def receber():
         print("Cliente:", msgd.decode())
 
 # Endereco IP do Servidor
-HOST = '127.0.0.1'
+HOST = '192.168.137.116'
 
 # Porta que o Servidor vai escutar
 PORT = 5002
